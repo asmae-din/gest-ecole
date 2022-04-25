@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+*{
+    font-family: Raleway;
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+ .btn,.header-underline{
+   background:#72b6e5;
+   background: linear-gradient(to right bottom ,#72b6e5,#9a59b5 );
+   
+}
+
+.registration-container{
+    background-color: white;
+    padding-top: .5em;
+    padding-bottom:2em;
+    max-width:  600px ;
+    max-height: 600px auto;
+    margin: 10% auto;
+    border-radius:5px;
+}
+
+.header{
+    margin-left: .9em;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+.header-underline{
+    margin-top:none;
+    padding-top: none;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    width: 35px;
+    height: 3px;
+
+}
+.fields-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.inputs-container{
+    height: 6em;
+}
+
+.input-field{
+    padding-left: 1em;
+    border-style:outset;
+    width: 250px;
+    height: 2.8em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    opacity: 0.5;
+}
+
+.field-label{
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(34, 33, 33);
+    margin-bottom: .5em;
+}
+
+.btn{
+    margin-bottom:  20px;
+    width: 550px;
+    height: 2em;
+    font-size: 1.2em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.gender-fields{
+
+    margin-top: 1em;
+    width: 100% auto;
+}
+
+.gender-lbl{
+    margin-top: 5;
+    margin-right: 5em;
+    font-size: 1em;
+}
+
+.gender-inputs{
+    margin-top: 1em;
+}
+
+
+

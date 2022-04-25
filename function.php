@@ -14,7 +14,7 @@
         header("location:profile.php?msg=$msg");
       } else {
         echo $msg="Identification invalid!";
-        header("location:signup.php?msg=$msg");
+        header("location:signin.php?msg=$msg");
       }
 
 }

@@ -1,4 +1,4 @@
 <?php
 session_destroy();
-header("location:signup.php");
+header("location:signin.php");
 ?>

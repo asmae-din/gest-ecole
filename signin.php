@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Signin Template · Bootstrap v5.1</title>
+    <title>SignIn | E-ecole </title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 
@@ -58,7 +58,7 @@
       </label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit" name="login_btn">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    <span> Vous n'avez pas de compte ? <a href="./register.php">Inscrivez-vous</a></span>
   </form>
 </main>
   </body>
