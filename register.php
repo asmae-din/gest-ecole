@@ -8,33 +8,33 @@
             <link rel="stylesheet" href="./styles-regis.css"/>
         </head>
         <body>
-                <section class="registration-container">
+                <form class="registration-container" method="POST" action="function.php">
                     <h1 class="header">Registration</h1>
                             <div class="header-underline"></div>
                             <div class="fields-container">
                                 <div class="inputs-container">
-                                    <label class="field-label" for="name">Full Name</label>
-                                    <input  class="input-field" type="text" value="Enter your name" id="name" >
+                                    <label class="field-label" for="name">Nom et Prénom</label>
+                                    <input  class="input-field" type="text" placeholder="Nom & Prenom" name="nom_prenom" >
                                 </div>
                                 <div class="inputs-container">
-                                    <label class="field-label" for="username">Username</label> 
-                                    <input class="input-field"type="text" value="Enter your Username" id="username" > 
+                                    <label class="field-label" for="username">Date de naissance</label> 
+                                    <input class="input-field" type="text" placeholder="Date de naissance" name="date_naiss" > 
                                 </div>
                                 <div class="inputs-container">
                                     <label class="field-label" for="email">Email</label> 
-                                    <input class="input-field" type="text" value="Enter your email" id="email" > 
+                                    <input class="input-field" type="email" placeholder="Email" name="email" > 
                                 </div>
                                 <div class="inputs-container">
-                                    <label class="field-label" for="phone-number">Phone Number</label> 
-                                    <input  class="input-field" type="text" value="Enter your number" id="phone-number" > 
+                                    <label class="field-label" for="phone-number">Tel:</label> 
+                                    <input  class="input-field" type="tel" placeholder="Phone number" name="tel" > 
                                 </div>
                                 <div class="inputs-container">
                                     <label class="field-label" for="password">Password</label> 
-                                    <input class="input-field" type="text" value="Enter your Password" id="password"> 
+                                    <input class="input-field" type="password" placeholder="Password" name="pass"> 
                                 </div>
                                 <div class="inputs-container">
                                     <label class="field-label" for="confi-password">Confirm Password</label>
-                                    <input  class="input-field" type="text" value="Confirm your Password" id="confi-password"> 
+                                    <input  class="input-field" type="password" placeholder="Confirm your Password" name="confirm-password"> 
                                 </div>
                                 <div  class="inputs-container gender-fields">
                                     <label class="field-label">Gender</label>
@@ -49,6 +49,6 @@
                                 </div> 
                                 <button class="btn ">Register</button>
                             </div>
-                </section>
+                </form>
         </body>
 </html>

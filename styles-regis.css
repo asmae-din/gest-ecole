@@ -23,6 +23,8 @@ html, body{
     max-height: 600px auto;
     margin: 10% auto;
     border-radius:5px;
+    border: 1px solid;
+    box-shadow: 10px 10px 5px #aaaaaa;
 }
 
 .header{
