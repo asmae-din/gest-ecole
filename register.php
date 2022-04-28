@@ -8,7 +8,7 @@
             <link rel="stylesheet" href="./styles-regis.css"/>
         </head>
         <body>
-                <form class="registration-container" method="POST" action="function.php">
+                <form class="registration-container" method="POST" action="function.php" onsubmit="checkPw()">
                     <h1 class="header">Registration</h1>
                             <div class="header-underline"></div>
                             <div class="fields-container">
@@ -30,12 +30,13 @@
                                 </div>
                                 <div class="inputs-container">
                                     <label class="field-label" for="password">Password</label> 
-                                    <input class="input-field" type="password" placeholder="Password" name="pass"> 
+                                    <input class="input-field" type="password" placeholder="Password" name="pass" id="pass"> 
                                 </div>
                                 <div class="inputs-container">
                                     <label class="field-label" for="confi-password">Confirm Password</label>
-                                    <input  class="input-field" type="password" placeholder="Confirm your Password" name="confirm-password"> 
+                                    <input  class="input-field" type="password" placeholder="Confirm your Password" name="confirm-password" id="confirm-pass"> 
                                 </div>
+                            
                                 <div  class="inputs-container gender-fields">
                                     <label class="field-label">Gender</label>
                                         <div class="gender-inputs">
@@ -50,5 +51,17 @@
                                 <button class="btn ">Register</button>
                             </div>
                 </form>
+                <script>
+                                function checkPw() {
+                                    alert("hi");
+                                pw1 = document.getElementById("pass").value;
+                                pw2 = document.getElementById("confirm-pass").value;
+                                if (pw1 != pw2) {
+                                alert("\erreur: les mots de passes ne correspondent pas")
+                                return false;
+                                }
+                                else return true;
+                                }
+                            </script>
         </body>
 </html>
