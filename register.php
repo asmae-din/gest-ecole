@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
         <head>
@@ -5,16 +8,23 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Inscription</title>
-            <link rel="stylesheet" href="./styles-regis.css"/>
+            <link rel="stylesheet" href="styles-regis.css"/>
         </head>
         <body>
-                <form class="registration-container" method="POST" action="function.php"  onsubmit="checkPw() & checkGender()">
+
+               <form class="registration-container" name="register-form" method="POST" action="function.php"  onsubmit="checkPw() & checkGender() & validateForm()">
+                    <span class="error">
+                    <?php 
+                        if(isset($_SESSION['error'] )){
+                            echo $_SESSION['error'];
+                        }
+                    ?></span>
                     <h1 class="header">Registration</h1>
                     <div class="header-underline"></div>
                     <div class="fields-container">
                         <div class="inputs-container">
                             <label class="field-label" for="name">Nom et Prénom</label>
-                            <input  class="input-field" type="text" placeholder="Nom & Prenom" name="nom_prenom" required>
+                            <input  class="input-field" type="text" placeholder="Nom & Prenom" name="nom_prenom"  >
                         </div>
                         <div class="inputs-container">
                             <label class="field-label" for="username">Date de naissance</label> 
@@ -34,12 +44,12 @@
                         </div>
                         <div class="inputs-container">
                             <label class="field-label" for="confi-password">Confirm Password</label>
-                            <input  class="input-field" type="password" placeholder="Confirm your Password" name="confirm-password" id="confirm-pass" required> 
+                            <input  class="input-field" type="password" placeholder="Confirm your Password" name="confiPass" id="confirm-pass" required> 
                         </div>
                             
                         <div  class="inputs-container gender-fields">
                             <label class="field-label">Gender</label>
-                            <div class="gender-inputs" aria-required="$_POST">
+                            <div class="gender-inputs">
                                 <input type="radio" name="gender" value="male" >
                                 <label  class="gender-lbl" for="male">Male</label>
                                 <input type="radio" name="gender" value="female" >
@@ -78,6 +88,22 @@
                             }
                         }
                     
+                        function validateForm(){
+                            var  inputs=document.getElementsByTagName("input");
+                            for(let i=0; i<inputs.length; i++){
+                                if(inputs[i].value==""){
+                                    inputs[i].placeholder("champ obligatoire");
+                                    return false;
+                                }
+                            }
+                        }
+
+                       
                     </script>
         </body>
 </html>
+<?php
+
+session_destroy();
+?>
+

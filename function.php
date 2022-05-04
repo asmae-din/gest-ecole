@@ -10,7 +10,6 @@
         $user = $query->fetch();
         if ($user)
         {
-          
             echo $msg = "Identifiant valid!";
             $_SESSION["email"] = $user['email'];
             $_SESSION["pass"] = $user['password'];
@@ -22,7 +21,7 @@
             header("location:./signin.php?msg=$msg");
         }
     }
-    if($user){
+    
       try {
 
         // set the PDO error mode to exception
@@ -34,21 +33,35 @@
         $email = $_POST["email"];
         $tel = $_POST["tel"];
         $pw=$_POST["pass"];
+        $confPw=$_POST["confiPass"];
+        if($_POST("pass")!=$_POST("confiPass")){
+          $_SESSION['error'] = 'les mots de passes ne correspondent pas';
+        }
         $_SESSION["nom_complet"] = $nom_prenom;
         $stmt = $cnx->prepare("INSERT INTO etudiant (nom_prenom, date_naiss, genre, email, tel, password)
         VALUES ('$nom_prenom','$date_naiss','$genre','$email','$tel','$pw')");
-        $stmt->execute();
-
         
-        echo "New records created successfully";
-        header("location:./profile.php?msg=$msg");
+        if(!isset($_POST["nom_prenom"]) || trim($_POST["nom_prenom"])=="" ||
+        !isset($_POST["date_naiss"]) || trim($_POST["date_naiss"])=="" ||
+        !isset($_POST["gender"]) || trim($_POST["gender"])==""||
+        !isset($_POST["email"]) || trim($_POST["email"])=="" || 
+        !isset($_POST["tel"]) || trim($_POST["tel"])=="" ||
+        !isset($_POST["pass"]) || trim($_POST["pass"])=="" ){
+         
+          $_SESSION['error'] = 'Fields cannot be empty!';
+          header("location:./register.php");
+          
+        }else{
+          $stmt->execute();
+          echo "New records created successfully";
+          header("location:./profile.php?msg=$msg");
+        }
+       
+     
       } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
       }
       $cnx = null;
-    }else{
       
-
-}
 
 ?>
