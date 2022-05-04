@@ -150,7 +150,7 @@ session_start();
         </div> -->
       </div>
     
-      <h2>Section title</h2>
+      <h2>Accueil</h2>
       <div class="row">
         <div class="col-sm-3">
           <div class="card">

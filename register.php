@@ -24,7 +24,7 @@ session_start();
                     <div class="fields-container">
                         <div class="inputs-container">
                             <label class="field-label" for="name">Nom et Prénom</label>
-                            <input  class="input-field" type="text" placeholder="Nom & Prenom" name="nom_prenom"  >
+                            <input  class="input-field" type="text" placeholder="Nom & Prenom" name="nom_prenom"  required>
                         </div>
                         <div class="inputs-container">
                             <label class="field-label" for="username">Date de naissance</label> 
@@ -84,7 +84,7 @@ session_start();
                             if(checked_gender != null){  
                             return true; 
                             } else {
-                            alert('Nothing checked');
+                            alert('Merci de selectionner votre sexe');
                             }
                         }
                     

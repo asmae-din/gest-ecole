@@ -34,8 +34,12 @@
         $tel = $_POST["tel"];
         $pw=$_POST["pass"];
         $confPw=$_POST["confiPass"];
-        if($_POST("pass")!=$_POST("confiPass")){
+        if($_POST["pass"]===$_POST["confiPass"]){
+          $_SESSION['error'] = 'les mots de passes sont identique';
+        }else{
           $_SESSION['error'] = 'les mots de passes ne correspondent pas';
+          
+          exit();
         }
         $_SESSION["nom_complet"] = $nom_prenom;
         $stmt = $cnx->prepare("INSERT INTO etudiant (nom_prenom, date_naiss, genre, email, tel, password)
@@ -46,14 +50,15 @@
         !isset($_POST["gender"]) || trim($_POST["gender"])==""||
         !isset($_POST["email"]) || trim($_POST["email"])=="" || 
         !isset($_POST["tel"]) || trim($_POST["tel"])=="" ||
-        !isset($_POST["pass"]) || trim($_POST["pass"])=="" ){
+        !isset($_POST["pass"]) || trim($_POST["pass"])=="" ||
+        !isset($_POST["confiPass"]) || trim($_POST["confiPass"])==""){
          
-          $_SESSION['error'] = 'Fields cannot be empty!';
+          $_SESSION['error'] = 'Champs Obligatoire !';
           header("location:./register.php");
           
         }else{
           $stmt->execute();
-          echo "New records created successfully";
+          echo $msg="Bienvenu";
           header("location:./profile.php?msg=$msg");
         }
        
