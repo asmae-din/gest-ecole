@@ -12,39 +12,40 @@ session_start();
         </head>
         <body>
 
-               <form class="registration-container" name="register-form" method="POST" action="function.php"  onsubmit="checkPw() & checkGender() & validateForm()">
-                    <span class="error">
-                    <?php 
-                        if(isset($_SESSION['error'] )){
-                            echo $_SESSION['error'];
-                        }
-                    ?></span>
+               <form class="registration-container" name="register-form" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  onsubmit=" return checkPw()">
+
                     <h1 class="header">Registration</h1>
                     <div class="header-underline"></div>
                     <div class="fields-container">
                         <div class="inputs-container">
                             <label class="field-label" for="name">Nom et Prénom</label>
-                            <input  class="input-field" type="text" placeholder="Nom & Prenom" name="nom_prenom"  required>
+                            <input  class="input-field" type="text" placeholder="Nom & Prenom" name="nom_prenom"  >
+                            <span class="error"> <?php if(isset($_SESSION['nomErr'])){echo$_SESSION['nomErr'];}; ?></span>
                         </div>
                         <div class="inputs-container">
                             <label class="field-label" for="username">Date de naissance</label> 
                             <input class="input-field" type="text" placeholder="Date de naissance" name="date_naiss" required > 
+                            <span class="error"> <?php $dateErr; ?></span>
                         </div>
                         <div class="inputs-container">
                             <label class="field-label" for="email">Email</label> 
                             <input class="input-field" type="email" placeholder="Email" name="email"  required> 
+                            <span class="error"> <?php $emailErr; ?></span>
                         </div>
                         <div class="inputs-container">
                             <label class="field-label" for="phone-number">Tel:</label> 
                             <input  class="input-field" type="tel" placeholder="Phone number" name="tel" required > 
+                            <span class="error"> <?php $telErr; ?></span>
                         </div>
                         <div class="inputs-container">
                             <label class="field-label" for="password">Password</label> 
                             <input class="input-field" type="password" placeholder="Password" name="pass" id="pass" required > 
+                            <span class="error"> <?php $passErr; ?></span>
                         </div>
                         <div class="inputs-container">
                             <label class="field-label" for="confi-password">Confirm Password</label>
                             <input  class="input-field" type="password" placeholder="Confirm your Password" name="confiPass" id="confirm-pass" required> 
+                            <span class="error"> <?php $confipassErr; ?></span>
                         </div>
                             
                         <div  class="inputs-container gender-fields">
@@ -57,6 +58,7 @@ session_start();
                                 <input type="radio" name="gender" value="Prefer not to say">
                                 <label  class="gender-lbl" for="Prefer not to say">Prefer not to say</label>
                                 <label for="gender_error" id="gender_error"></label>
+                                <span class="error"> <?php $genderErr; ?></span>
                             </div>
                          </div> 
                         <button class="btn " name="submit">Register</button>
@@ -68,14 +70,20 @@ session_start();
                         {
                             pw1 = document.getElementById("pass").value;
                             pw2 = document.getElementById("confirm-pass").value;
+                            
                             if (pw1 != pw2) {
-                            alert("\erreur: les mots de passes ne correspondent pas");
+                            // alert("\erreur: les mots de passes ne correspondent pas");
+                           document.getElementsByTagName("span").HTML
+
                             return false;
                             }else{
+                                // window.location="function.php";  
+                                <?php
+                                // header("location:function.php");
+                                ?>
                             return true;
                             }
                         }
-                        
                        
                         function checkGender()
                         {
@@ -84,7 +92,7 @@ session_start();
                             if(checked_gender != null){  
                             return true; 
                             } else {
-                            alert('Merci de selectionner votre sexe');
+                            alert('Merci de selectionner votre sex');
                             }
                         }
                     
