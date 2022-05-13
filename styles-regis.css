@@ -14,14 +14,6 @@ html, body{
    background: linear-gradient(to right bottom ,#72b6e5,#9a59b5 );
    
 }
-.error{
-    color: red;
-    font-size: 18px;
-    width: 300px;
-    text-align: center;
-    margin-left: 120px;
-}
-
 
 .registration-container{
     background-color: white;

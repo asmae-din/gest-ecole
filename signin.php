@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>SignIn | E-ecole </title>
+    <title>Signin Template · Bootstrap v5.1</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 
@@ -39,16 +38,17 @@
   <body class="text-center">
     
 <main class="form-signin">
-  <form method="post" action="function.php">
-    <img class="mb-4" src="assets/brand/logo.png" alt="" width="72" height="72">
+  <form method="post" action="includes/function.php">
+  <input type="hidden" name="action"  value="signin">
+    <img class="mb-4" src="./images/eco" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="Login" name="email">
-      <label for="floatingInput">Login</label>
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+      <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pass">
       <label for="floatingPassword">Password</label>
     </div>
 
@@ -57,9 +57,13 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" name="login_btn">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     <span> Vous n'avez pas de compte ? <a href="./register.php">Inscrivez-vous</a></span>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
   </form>
 </main>
+
+
+    
   </body>
 </html>
