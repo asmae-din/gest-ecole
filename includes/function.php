@@ -10,7 +10,7 @@
       $user = $query->fetch();
       if ($user)
       {
-          echo $msg = "Identifiant valid!";
+          echo $msg = "Bienvenu";
           $_SESSION["nom_complet"] = $user['nom_prenom'];
           $_SESSION["email"] = $user['email'];
           $_SESSION["pass"] = $user['password'];
@@ -31,9 +31,10 @@
         $genre=$_POST["gender"];
         $email = $_POST["email"];
         $tel = $_POST["tel"];
+        $pw=$_POST["pass"];
         $_SESSION["nom_complet"] = $nom_prenom;
-        $stmt = $pdo->prepare("INSERT INTO etudiant (nom_prenom, date_naiss, genre, email, tel,)
-        VALUES ('$nom_prenom','$date_naiss','$genre','$email','$tel')");
+        $stmt = $pdo->prepare("INSERT INTO etudiant (nom_prenom, date_naiss, genre, email, tel,password)
+        VALUES ('$nom_prenom','$date_naiss','$genre','$email','$tel','pass')");
         $stmt->execute();
         $msg="Bienvenu";
         header("location:../profil.php?msg=$msg");

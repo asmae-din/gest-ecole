@@ -40,7 +40,7 @@
 <main class="form-signin">
   <form method="post" action="includes/function.php">
   <input type="hidden" name="action"  value="signin">
-    <img class="mb-4" src="./images/eco" alt="" width="72" height="57">
+    <img class="mb-4" src="./images/school.png" alt="" width="75" height="75">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
