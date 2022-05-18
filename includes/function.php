@@ -42,6 +42,18 @@
         echo "Error: " . $e->getMessage();
       }
       $cnx = null;
+    }elseif($action==="update"){
+      
+      $query="SELECT * FROM etudiant WHERE email =? and password = ?";
+      try {
+        $stmt=$pdo->query($query);
+        if($stmt===false){
+          die("erreur");
+        }
+      } catch (\PDOException $e) {
+        echo $e->getMessage();
+      }
+
     } 
   
 ?>
